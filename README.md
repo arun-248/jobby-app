@@ -1,432 +1,439 @@
-In this project, let's build a **Jobby App** by applying the concepts we have learned till now.
+# 💼 Jobby App
 
-### Refer to videos below:
+<div align="center">
 
-<div style="text-align: center;">
-  <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/jobby-app-success-output-v0.mp4" type="video/mp4">
-  </video>
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)](https://www.javascript.com/)
+[![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?logo=css3&logoColor=white&style=for-the-badge)](https://www.w3.org/Style/CSS/)
+[![Context API](https://img.shields.io/badge/State-Context%20API-61DAFB?style=for-the-badge)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
+**A comprehensive job search platform with authentication, advanced filtering, and detailed job listings**
+
+[Live Demo](#) | [GitHub Repo](https://github.com/arun-248/jobby-app)
+
 </div>
-<br/>
 
-**Failure View** <br/>
+---
 
-<div style="text-align: center;">
-  <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/jobby-app-failure-output-v1.mp4" type="video/mp4">
-  </video>
+## 🎯 Test Credentials
+
+**Quick Access - Use these credentials to explore the application:**
+
+* Username: rahul
+* Password: rahul@2021
+
+---
+
+## 🌟 Project Highlights
+
+> **Transform Your Job Search**: Browse comprehensive job listings, apply advanced filters, and discover your next opportunity with intelligent job matching and detailed company insights.
+
+**What makes this special:**
+- Secure authentication with JWT tokens and protected routes
+- Advanced multi-filter system combining employment type, salary, and search
+- End-to-end solution from login to job application
+- Interactive job browsing with real-time filtering
+- Production-ready with professional UI/UX design
+- Built for job seekers with real-world employment workflows
+
+---
+
+## 🚀 Key Features
+
+### Authentication & Security
+* Secure login system with JWT tokens
+* Form validation and error handling
+* Protected routes for authenticated users
+* Automatic redirect for unauthenticated access
+* Session persistence with cookies
+
+### Job Discovery
+* Browse comprehensive job listings
+* Real-time search functionality
+* Filter by employment type (Full-time, Part-time, Freelance, Internship)
+* Filter by salary range (10 LPA, 20 LPA, 30 LPA, 40 LPA+)
+* Advanced multi-filter combinations
+* Dynamic API requests with query parameters
+
+### Profile Management
+* User profile display on Jobs page
+* Profile image and professional biography
+* Professional information display
+* Error handling with retry functionality
+
+### Job Details
+* Comprehensive job information with descriptions
+* Company website links
+* Required skills listing with icons
+* Company culture and work environment information
+* Similar job recommendations
+* Detailed employment and location information
+
+### User Experience
+* Responsive design for all devices
+* Loading states with animated spinners
+* Error views with retry options
+* No jobs found messaging
+* Not found page for invalid routes
+* Navigation header with logout functionality
+
+---
+
+## 🏗️ System Architecture
+
+### Data Flow
+```
+Frontend (React)
+      │
+      ├─ Login Route → Authentication API
+      │
+      ├─ Home Route → Welcome Page
+      │
+      ├─ Jobs Route → Profile API + Jobs API
+      │              (with filters)
+      │
+      ├─ Job Details Route → Job Details API
+      │
+      └─ Not Found Route → 404 Page
+```
+
+### Component Structure
+- **Root Components**: App, Header, Home, Login
+- **Jobs Section**: Jobs, JobCard, FilterPanel, SearchBar
+- **Job Details**: JobDetails, SkillItem, CompanyInfo, SimilarJobItem
+- **Common**: Loader, FailureView, NotFound
+
+---
+
+## ⚙️ Tech Stack
+
+### Frontend
+- React 18.x with functional components and hooks
+- React Router for client-side routing
+- Context API for state management
+- React Cookies for JWT storage
+- CSS3 with responsive design
+
+### API Integration
+- Fetch API for HTTP requests
+- JWT authentication in request headers
+- Query parameters for filtering
+- Multi-endpoint data fetching
+
+### Styling & UI
+- CSS3 responsive design
+- Mobile-first approach
+- Flexbox and Grid layouts
+- Breakpoints for all device sizes
+- React Loader Spinner for loading states
+- Bootstrap icons for UI elements
+
+---
+
+## 🌐 API Endpoints
+
+**Authentication**
+- POST `/login` - User authentication with credentials
+
+**Profile Data**
+- GET `/profile` - User profile information
+
+**Job Listings**
+- GET `/jobs` - Job list with filters (employment_type, minimum_package, search)
+
+**Job Details**
+- GET `/jobs/:id` - Detailed job information and similar jobs
+
+---
+
+## 🗺️ Application Routes
+
+**Login Route** (`/login`)
+- User credential entry
+- JWT token generation
+- Error message display for invalid credentials
+- Redirect to Home on successful login
+
+**Home Route** (`/`)
+- Welcome screen for authenticated users
+- Call-to-action button to Jobs section
+- Hero imagery and branding
+
+**Jobs Route** (`/jobs`)
+- Profile information display
+- Employment type filters
+- Salary range filters
+- Search functionality
+- Job listing display
+- Dynamic filtering with multiple options
+
+**Job Item Details Route** (`/jobs/:id`)
+- Detailed job information
+- Company details and website link
+- Required skills display
+- Life at company section
+- Similar jobs recommendations
+- Error handling with retry
+
+**Not Found Route** (`/not-found`)
+- 404 page for invalid URLs
+- Navigation back to home
+
+---
+
+## 📊 Data Models
+
+**Employment Types**
+- Full Time
+- Part Time
+- Freelance
+- Internship
+
+**Salary Ranges**
+- 10 LPA and above
+- 20 LPA and above
+- 30 LPA and above
+- 40 LPA and above
+
+**Filter Combinations**
+Multiple filters work together with query parameters combined by commas and logical operators for complex filtering scenarios.
+
+---
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+- Node.js 14 or higher
+- npm or yarn package manager
+- Modern web browser
+
+### Installation Steps
+
+1. Clone the repository
+```bash
+git clone https://github.com/arun-248/jobby-app.git
+cd jobby-app
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start development server
+```bash
+npm start
+```
+
+4. Access the application
+```
+http://localhost:3000
+```
+
+---
+
+## 🎨 Design Specifications
+
+**Color Palette**
+- Primary: #4f46e5 (Indigo)
+- Secondary: #64748b (Slate)
+- Dark Background: #272727
+- Light Background: #f8fafc
+- Accent: #fbbf24 (Amber)
+
+**Responsive Breakpoints**
+- Mobile: < 576px
+- Small: 576px - 768px
+- Medium: 768px - 992px
+- Large: 992px - 1200px
+- Extra Large: > 1200px
+
+**Typography**
+- Font Family: Roboto
+- Scalable font sizes across breakpoints
+
+---
+
+## 🔥 Advanced Features
+
+**Authentication Flow**
+- Login form submits to authentication API
+- JWT token stored in cookies on success
+- Token validated for protected routes
+- Automatic redirect based on auth status
+- Logout clears session
+
+**Multi-Filter System**
+- Employment type filters as comma-separated string
+- Salary range sent as single parameter
+- Search term handled separately
+- Combined query parameters in API calls
+- Real-time filter updates
+
+**Search Implementation**
+- Search icon button triggers API call
+- Query parameter updates dynamically
+- Loader displayed during fetch
+- Results updated automatically
+
+**Error Handling**
+- Retry buttons for failed API calls
+- User-friendly error messages
+- Failure views for different scenarios
+- Graceful degradation
+
+---
+
+## 🎓 Learning Outcomes
+
+### React Concepts
+- Functional components and hooks
+- Context API for state management
+- React Router for navigation
+- Form handling and validation
+- API integration patterns
+
+### Advanced Patterns
+- Protected routes with authentication
+- Query parameter management
+- Multi-filter implementation
+- Loading and error states
+- Responsive component design
+
+### Development Skills
+- API consumption and data transformation
+- Authentication and security basics
+- State management strategies
+- Component composition
+- User experience considerations
+
+---
+
+## 🛠️ Troubleshooting
+
+**Login Issues**
+- Verify correct credentials
+- Check browser cookie settings
+- Ensure HTTPS for production
+
+**API Failures**
+- Verify internet connection
+- Check API endpoint availability
+- Confirm JWT token validity
+- Review browser console for errors
+
+**Rendering Issues**
+- Clear browser cache
+- Check responsive design at current breakpoint
+- Verify component props
+
+---
+
+## 📈 Future Roadmap
+
+### Short-term Goals (Next 3 months)
+- Save/bookmark favorite jobs
+- Apply directly through app
+- Advanced search with keywords
+- Job alerts and notifications
+- View application history
+- Enhanced profile settings
+- Dark/light theme toggle
+
+### Long-term Vision (6-12 months)
+- Resume upload and management
+- Interview preparation tools
+- Salary comparison tool
+- Company reviews and ratings
+- Networking features
+- Mobile app version
+- Real-time job notifications
+- AI-powered job recommendations
+
+---
+
+## ♿ Accessibility & Best Practices
+
+- Semantic HTML structure
+- Alt text for all images
+- ARIA labels where appropriate
+- Keyboard navigation support
+- Color contrast compliance
+- Form validation feedback
+- Error message clarity
+
+---
+
+## ⚡ Performance Considerations
+
+- Optimized API requests with proper caching
+- Lazy loading of components
+- Efficient state updates
+- Image optimization
+- Responsive image loading
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+**Reporting Bugs**
+1. Check existing issues first
+2. Create detailed bug report
+3. Include steps to reproduce
+4. Add screenshots if possible
+
+**Suggesting Features**
+1. Open a discussion on GitHub
+2. Describe the feature clearly
+3. Explain the use case
+4. Consider implementation complexity
+
+**Pull Requests**
+1. Fork the repository
+2. Create feature branch (git checkout -b feature/AmazingFeature)
+3. Commit changes (git commit -m 'Add AmazingFeature')
+4. Push to branch (git push origin feature/AmazingFeature)
+5. Open Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+```
+MIT License - Free to use, modify, and distribute
+Open source and community-driven
+```
+
+---
+
+## 🙏 Acknowledgments
+
+- React community for documentation and tools
+- Job API for providing job data
+- Design system for color palette
+- Open source community for inspiration and support
+
+---
+
+
+<div align="center">
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License - Feel free to use, modify, and distribute
+Open source and ready for collaboration
+```
+
+**💼 Built with passion for career development | 🚀 Powered by React**
+
+*Made with ❤️ by [Arun Chinthalapally](https://github.com/arun-248)*
+
 </div>
-<br/>
-
-### Design Files
-
-<details>
-<summary>Login Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Login](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Login](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-lg-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Login Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-failure-lg-output.png)
-</details>
-
-<details>
-<summary>Home Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Home](https://assets.ccbp.in/frontend/content/react-js/jobby-app-home-sm-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Home](https://assets.ccbp.in/frontend/content/react-js/jobby-app-home-lg-output.png)
-</details>
-
-<details>
-<summary>Jobs Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Jobs](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Jobs Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-success-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - No Jobs](https://assets.ccbp.in/frontend/content/react-js/jobby-app-no-jobs-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Profile Failure](https://assets.ccbp.in/frontend/content/react-js/jooby-app-profile-failure-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Jobs Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-failure-lg-output-v0.png)
-</details>
-
-<details>
-<summary>Job Item Details Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Job Details Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-success-sm-output-v0.png)
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Job Details Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-failure-sm-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Job Details Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-success-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Job Details Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-failure-lg-output.png)
-</details>
-
-<details>
-<summary>Not Found Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Not Found](https://assets.ccbp.in/frontend/content/react-js/jobby-app-not-found-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Not Found](https://assets.ccbp.in/frontend/content/react-js/jobby-app-not-found-lg-output-v0.png)
-</details>
-
-### Set Up Instructions
-
-<details>
-<summary>Click to view</summary>
-
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
-
-### Completion Instructions
-
-<details>
-<summary>Functionality to be added</summary>
-<br/>
-
-The app must have the following functionalities
-
-- **Login Route**
-
-  - When invalid credentials are provided and the **Login** button is clicked, then the error message received from the response should be displayed
-  - When valid credentials are provided and the **Login** button is clicked, then the page should be navigated to the Home Route
-  - When an _unauthenticated_ user, tries to access the Home, Jobs and Job Item Details Route, then the page should be navigated to Login Route
-  - When an _authenticated_ user, tries to access the Home, Jobs and Job Item Details Route, then the page should be navigated to the respective route
-  - When an _authenticated_ user, tries to access the Login Route, then the page should be navigated to the Home Route
-
-- **Home Route**
-
-  - When an _authenticated_ user opens the Home Route
-    - Clicks on the **Find Jobs** button, then the page should be navigated to the Jobs Route
-
-- **Jobs Route**
-
-  - When an _authenticated_ user opens the Jobs Route
-
-    - An HTTP GET request should be made to **Profile API URL**
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/content/react-js/jobby-app-profile-failure-lg-output.png) should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to **Profile API URL**
-    - An HTTP GET request should be made to **Jobs API URL** with `employment_type`, `minimum_package`, and `search` as query parameters with empty strings as initial values
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, display the list of jobs received from the response
-      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-failure-lg-output.png) should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to **Jobs API URL**
-    - When a value is provided in the search input and search icon button is clicked
-      - Make an HTTP GET request to the **Jobs API URL** with `jwt_token` in the Cookies and query parameter `search` with value as the text provided in the search input
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, display the list of jobs received from the response
-    - When **Employment Types** options are selected
-      - Make an HTTP GET request to the **Jobs API URL** with `jwt_token` in the Cookies and query parameter `employment_type` with value as a list of selected employment type id's as a single string separated by `,`
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, display the list of jobs received from the response
-    - When **Salary Range** is selected
-      - Make an HTTP GET request to the **Jobs API URL** with `jwt_token` in the Cookies and query parameter `minimum_package` with value as the id of the selected salary range
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, display the list of jobs received from the response
-    - When the HTTP GET request made to the **Jobs API URL** returns an empty list for jobs then [No Jobs View](https://assets.ccbp.in/frontend/content/react-js/jobby-app-no-jobs-lg-output.png) should be displayed
-
-  - When multiple filters are applied, then the HTTP GET request should be made with all the filters that are applied
-  - For example: When the **Full Time** and **Part Time** employment types are selected, salary range **10 LPA and above** is selected and search input field is empty, then the **Jobs API URL** will be as follows
-
-    ```js
-    const apiUrl = 'https://apis.ccbp.in/jobs?employment_type=FULLTIME,PARTTIME&minimum_package=1000000&search='
-    ```
-
-  - When a **job** is clicked, then the page should be navigated to the Job Item Details Route
-
-- **Job Item Details Route**
-
-  - When an _authenticated_ user opens the Job Item Details Route
-    - An HTTP GET request should be made to **Job Details API URL** with `jwt_token` in the Cookies and job `id` as path parameter
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - The list of similar jobs should be displayed
-      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-failure-lg-output.png) should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to **Job Details API URL**
-  - When the **Visit** button is clicked, then the corresponding company website URL should be opened in a new tab
-
-- **Not Found Route**
-
-  - When a random path is provided as the URL path, then the page should be navigated to the Not Found Route
-
-- **Header**
-
-  - When the **website logo** image is clicked, then the page should be navigated to the Home Route
-  - When the **Home** link is clicked, then the page should be navigated to the Home Route
-  - When the **Jobs** link is clicked, then the page should be navigated to the Jobs Route
-  - When the **Logout** button is clicked, then the page should be navigated to the Login Route
-
-- The App is provided with `employmentTypesList`. It consists of a list of employment type objects with the following properties in each employment type object
-
-  |       Key        | Data Type |
-  | :--------------: | :-------: |
-  | employmentTypeId |  String   |
-  |      label       |  String   |
-
-- The App is provided with `salaryRangesList`. It consists of a list of salary range objects with the following properties in each salary range object
-
-  |      Key      | Data Type |
-  | :-----------: | :-------: |
-  | salaryRangeId |  String   |
-  |     label     |  String   |
-
-</details>
-
-<details>
-
-<summary>API Requests & Responses</summary>
-
-<br/>
-
-**Login API**
-
-#### API: `https://apis.ccbp.in/login`
-
-#### Method: `POST`
-
-#### Request:
-
-```json
-{
-  "username": "rahul",
-  "password": "rahul@2021"
-}
-```
-
-#### Description:
-
-Returns a response based on the credentials provided
-
-#### Sample Success Response
-
-```json
-{
-  "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y"
-}
-```
-
-#### Sample Failure Response
-
-```json
-{
-  "status_code": 404,
-  "error_msg": "Username is not found"
-}
-```
-
-**Profile API**
-
-#### API: `https://apis.ccbp.in/profile`
-
-#### Method: `GET`
-
-#### Description:
-
-Returns a response containing the profile details
-
-#### Sample Response
-
-```json
-{
-  "profile_details": {
-    "name": "Rahul Attuluri",
-    "profile_image_url": "https://assets.ccbp.in/frontend/react-js/male-avatar-img.png",
-    "short_bio": "Lead Software Developer and AI-ML expert"
-  }
-}
-```
-
-**Jobs API**
-
-#### API: `https://apis.ccbp.in/jobs`
-
-#### Example: `https://apis.ccbp.in/jobs?employment_type=FULLTIME,PARTTIME&minimum_package=1000000&search=`
-
-#### Method: `GET`
-
-#### Description:
-
-Returns a response containing the list of all jobs
-
-#### Sample Response
-
-```json
-{
-  "jobs": [
-    {
-      "company_logo_url": "https://assets.ccbp.in/frontend/react-js/jobby-app/facebook-img.png",
-      "employment_type": "Full Time",
-      "id": "d6019453-f864-4a2f-8230-6a9642a59466",
-      "job_description": "We’re in search of a Back-End Software Engineer that specializes in server-side components. In this role, you’ll primarily work in NodeJs, SQL Lite, Python, AWS and GO and will bring a depth of knowledge on basic algorithms and data structures. As a Back-End Engineer, you might be architecting new features for our customers.",
-      "location": "Bangalore",
-      "package_per_annum": "21 LPA",
-      "rating": 4,
-      "title": "Backend Engineer"
-    }
-    ...
-  ],
-  "total":25,
-}
-```
-
-**Job Details API**
-
-#### API: `https://apis.ccbp.in/jobs/:id`
-
-#### Example: `https://apis.ccbp.in/jobs/bb95e51b-b1b2-4d97-bee4-1d5ec2b96751`
-
-#### Method: `GET`
-
-#### Description:
-
-Returns a response containing the job details
-
-#### Sample Response
-
-```json
-{
-  "job_details": {
-    "company_logo_url": "https://assets.ccbp.in/frontend/react-js/jobby-app/netflix-img.png",
-    "company_website_url": "https://about.netflix.com/en",
-    "employment_type": "Internship",
-    "id": "bb95e51b-b1b2-4d97-bee4-1d5ec2b96751",
-    "job_description": "We are looking for a DevOps Engineer with a minimum of 5 years of industry experience, preferably working in the financial IT community. The position in the team is focused on delivering exceptional services to both BU and Dev",
-    "skills": [
-      {
-        "image_url": "https://assets.ccbp.in/frontend/react-js/jobby-app/docker-img.png",
-        "name": "Docker"
-      },
-      ...
-    ],
-    "life_at_company": {
-      "description": "Our core philosophy is people over process. Our culture has been instrumental to our success. It has helped us attract and retain stunning colleagues, making work here more satisfying. Entertainment, like friendship, is a fundamental human need, and it changes how we feel and gives us common ground. We want to entertain the world.",
-      "image_url": "https://assets.ccbp.in/frontend/react-js/jobby-app/life-netflix-img.png"
-    },
-    "location":"Delhi",
-    "package_per_annum":"10 LPA",
-    "rating":4
-  },
-  "similar_jobs": [
-    {
-      "company_logo_url": "https://assets.ccbp.in/frontend/react-js/jobby-app/netflix-img.png",
-      "employment_type": "Freelance",
-      "id": "2b40029d-e5a5-48cc-84a6-b6e12d25625d",
-      "job_description": "The Experimentation Platform team builds internal tools with a big impact across the company. We are looking to add a UI engineer to our team to continue to improve our experiment analysis workflow and tools. Ideal candidates will be excited by direct contact with our users, fast feedback, and quick iteration.",
-      "location": "Delhi",
-      "rating": 4,
-      "title": "Frontend Engineer"
-    },
-    ...
-  ]
-}
-```
-
-</details>
-
-### Quick Tips
-
-<details>
-<summary>Click to view</summary>
-<br>
-
-- To convert a list of items as a comma-separated string we can use the array method `join()`
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- Render `Home` Route component when the path in URL matches `/`
-- Render `Login` Route component when the path in URL matches `/login`
-- Render `Jobs` Route component when the path in URL matches `/jobs`
-- Render `Job Item Details` Route component when the path in URL matches `/jobs/:id`
-- Render `Not Found` Route component when the path in URL matches `/not-found`
-- No need to use the `BrowserRouter` in `App.js` as we have already included in `index.js`
-
-- User credentials
-
-  ```text
-   username: rahul
-   password: rahul@2021
-
-  ```
-
-- Wrap the `Loader` component with an HTML container element and add the `data-testid` attribute value as **loader** to it
-
-  ```jsx
-  <div className="loader-container" data-testid="loader">
-    <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-  </div>
-  ```
-
-- **Jobs Route**
-
-  - The HTML button element with search icon should have the `data-testid` attribute value as **searchButton** to it
-
-  ```jsx
-  <button type="button" data-testid="searchButton">
-    <BsSearch className="search-icon" />
-  </button>
-  ```
-
-  - The profile image should have the alt as **profile**
-  - The company logo images in Jobs Route should have the alt as **company logo**
-
-- **Job Details Route**
-  - The company logo image should have the alt as **job details company logo**
-  - The life at company image should have the alt as **life at company**
-  - The skill images should have the alt as the value of the key `name` from each object in the **skills** list received from the job details response
-  - The company logo image in similar job item should have the alt as **similar job company logo**
-  </details>
-
-### Resources
-
-<details>
-<summary>Image URLs</summary>
-
-- [https://assets.ccbp.in/frontend/react-js/home-sm-bg.png](https://assets.ccbp.in/frontend/react-js/home-sm-bg.png)
-- [https://assets.ccbp.in/frontend/react-js/home-lg-bg.png](https://assets.ccbp.in/frontend/react-js/home-lg-bg.png)
-- [https://assets.ccbp.in/frontend/react-js/profile-bg.png](https://assets.ccbp.in/frontend/react-js/profile-bg.png)
-- [https://assets.ccbp.in/frontend/react-js/logo-img.png](https://assets.ccbp.in/frontend/react-js/logo-img.png) alt should be **website logo**
-- [https://assets.ccbp.in/frontend/react-js/failure-img.png](https://assets.ccbp.in/frontend/react-js/failure-img.png) alt should be **failure view**
-- [https://assets.ccbp.in/frontend/react-js/no-jobs-img.png](https://assets.ccbp.in/frontend/react-js/no-jobs-img.png) alt should be **no jobs**
-- [https://assets.ccbp.in/frontend/react-js/jobby-app-not-found-img.png](https://assets.ccbp.in/frontend/react-js/jobby-app-not-found-img.png) alt should be **not found**
-
-</details>
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-<div style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</div>
-<div style="background-color: #4f46e5; width: 150px; padding: 10px; color: white">Hex: #4f46e5</div>
-<div style="background-color: #f8fafc; width: 150px; padding: 10px; color: black">Hex: #f8fafc</div>
-<div style="background-color: #272727; width: 150px; padding: 10px; color: white">Hex: #272727</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #b6c5ff; width: 150px; padding: 10px; color: black">Hex: #b6c5ff</div>
-<div style="background-color: #6366f1; width: 150px; padding: 10px; color: white">Hex: #6366f1</div>
-<div style="background-color: #2c364c; width: 150px; padding: 10px; color: white">Hex: #2c364c</div>
-<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
-<div style="background-color: #fbbf24; width: 150px; padding: 10px; color: white">Hex: #fbbf24</div>
-<div style="background-color: #202020; width: 150px; padding: 10px; color: white">Hex: #202020</div>
-<div style="background-color: #cbd5e1; width: 150px; padding: 10px; color: black">Hex: #cbd5e1</div>
-<div style="background-color: #7e858e; width: 150px; padding: 10px; color: black">Hex: #7e858e</div>
-<div style="background-color: #121212; width: 150px; padding: 10px; color: white">Hex: #121212</div>
-<div style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</div>
-<div style="background-color: #ff0b37; width: 150px; padding: 10px; color: white">Hex: #ff0b37</div>
-<br/>
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.

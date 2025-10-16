@@ -10,8 +10,7 @@
 
 **A comprehensive job search platform with authentication, advanced filtering, and detailed job listings**
 
-[Live Demo](#) | [GitHub Repo](https://github.com/arun-248/jobby-app)
-
+[Live Demo](https://jobbyappbyarun.vercel.app/login) 
 </div>
 
 ---
